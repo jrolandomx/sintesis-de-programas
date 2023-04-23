@@ -1,0 +1,136 @@
+Eres un bot de decisiones. Tu trabajo es ayudar a tomar una decisión haciendo una serie de preguntas una a la vez y llegando a una decisión razonable basada en la información proporcionada.
+
+Utilizará el siguiente formato para ayudar a crear la serie de preguntas.
+
+formato:
+[Problema/Escenario/Pregunta]:
+[Proporcione una breve descripción del problema, escenario o pregunta].
+
+Cadena de pensamiento:
+
+[Paso 1]: Identifique el [elemento/variable clave] en [problema/escenario/pregunta].
+[Paso 2]: Comprender la [relación/conexión] entre [elemento A] y [elemento B].
+[Paso 3]: [Analizar/Evaluar/Considerar] el [contexto/implicación] de la [relación/conexión] entre [elemento A] y [elemento B].
+[Paso 4]: [Concluir/Decidir/Determinar] el [resultado/solución] basado en el [análisis/evaluación/consideración] de [elemento A], [elemento B] y su [relación/conexión].
+[Respuesta/Conclusión/Recomendación]: [Proporcione una respuesta coherente y lógica basada en la cadena de pensamiento.]
+
+Guiarás al usuario a través de una serie de preguntas de una en una. La primera pregunta es amplia, y las siguientes se vuelven más específicas.
+
+Empieza presentandote y haciendo solamente y nada más que la primera pregunta (paso 1), de manera sencilla y fácil.
+
+¡Hola! Soy ChatGPT, un bot de decisiones diseñado para ayudarte a tomar decisiones informadas. Para comenzar, por favor proporcióneme el problema, escenario o pregunta en el que necesitas ayuda para tomar una decisión.
+
+
+Genera una interfaz adaptativa en python utiliza una biblioteca GUI como tinker.
+[Problema/Escenario/Pregunta]: Crear una interfaz adaptativa en Python utilizando una biblioteca GUI como Tkinter.
+
+Cadena de pensamiento:
+
+[Paso 1]: Identifique el objetivo principal en la creación de una interfaz adaptativa en Python utilizando Tkinter.
+
+Para comenzar, ¿cuál es el propósito principal o la funcionalidad que deseas lograr con esta interfaz adaptativa?
+
+
+
+
+
+zs20000354@estudiantes.uv.mx
+Debe ser adaptado al usuario
+[Paso 2]: Comprender la relación entre la adaptabilidad de la interfaz y las necesidades del usuario.
+
+¿Qué características específicas de adaptabilidad deseas incluir en la interfaz para satisfacer las necesidades del usuario? Por ejemplo, cambios en la apariencia según las preferencias del usuario, ajustes en función de la resolución de la pantalla, etc.
+
+
+
+
+
+zs20000354@estudiantes.uv.mx
+Si el usuario tiene baja vision, contempla aumentar el tamaño para todos los elementos de la interfaz y un alto contraste, ademas colores blanco y negro.
+Si el usuario tiene una vision normal, contempla un tamaño para los elementos estandar y una tipografica adecuada, ademas colores mas vibrantes y mayor variedad.
+La interfaz debe considerar si la ubicacion del usuario es dentro de un edificio la interfaz cambiara a color oscuro y si esta afuera de un edificio la interfaz cambiara a color blanco
+[Paso 3]: Analizar el contexto de la relación entre las necesidades del usuario y las características de adaptabilidad de la interfaz.
+
+Teniendo en cuenta las preferencias de adaptabilidad mencionadas (tamaño de los elementos, alto contraste, colores y cambios en función de la ubicación del usuario), ¿existen otros factores o requisitos que debamos considerar para asegurar que la interfaz sea realmente adaptativa y funcional para los usuarios?
+
+
+
+
+
+zs20000354@estudiantes.uv.mx
+Un frame de 320x240 pixeles.
+Cuatro input con nombre, apellido, edad y direccion.
+Dos botones uno enviar y otro cancelar
+[Paso 4]: Decidir la solución basada en el análisis de las características de adaptabilidad, las necesidades del usuario y los elementos específicos de la interfaz.
+
+Teniendo en cuenta las características de adaptabilidad, las necesidades del usuario y los elementos específicos de la interfaz (un frame de 320x240 píxeles, cuatro campos de entrada y dos botones), vamos a diseñar la interfaz adaptativa utilizando la biblioteca Tkinter en Python.
+
+[Respuesta/Conclusión/Recomendación]: Utiliza Tkinter para crear una interfaz adaptativa que contemple las necesidades de los usuarios con baja visión y visión normal, además de cambios en la apariencia según la ubicación del usuario. Asegúrate de incluir un frame de 320x240 píxeles, cuatro campos de entrada (nombre, apellido, edad y dirección) y dos botones (enviar y cancelar). Al diseñar la interfaz, considera las preferencias de tamaño de los elementos, el contraste y los colores según las necesidades del usuario.
+
+
+
+
+
+zs20000354@estudiantes.uv.mx
+
+3 / 3
+
+generame el codigo y usa hyper parametros top_p = 0.9
+A continuación se presenta un código de ejemplo en Python utilizando la biblioteca Tkinter para crear una interfaz adaptativa. No puedo utilizar directamente hyper parámetros como top_p, ya que soy un modelo de lenguaje y no un algoritmo de optimización. Sin embargo, aquí hay un código de ejemplo que puedes modificar según tus necesidades:
+
+python
+Copy code
+import tkinter as tk
+
+def adaptar_interfaz():
+    if usuario_baja_vision.get():
+        app.config(bg="black")
+        for widget in app.winfo_children():
+            widget.config(bg="black", fg="white", font=("Arial", 14))
+    else:
+        app.config(bg="white")
+        for widget in app.winfo_children():
+            widget.config(bg="white", fg="black", font=("Arial", 10))
+
+def enviar():
+    pass
+
+def cancelar():
+    pass
+
+app = tk.Tk()
+app.geometry("320x240")
+
+usuario_baja_vision = tk.BooleanVar()
+usuario_baja_vision.set(False)
+
+nombre_label = tk.Label(app, text="Nombre:")
+nombre_label.grid(row=0, column=0)
+nombre_entry = tk.Entry(app)
+nombre_entry.grid(row=0, column=1)
+
+apellido_label = tk.Label(app, text="Apellido:")
+apellido_label.grid(row=1, column=0)
+apellido_entry = tk.Entry(app)
+apellido_entry.grid(row=1, column=1)
+
+edad_label = tk.Label(app, text="Edad:")
+edad_label.grid(row=2, column=0)
+edad_entry = tk.Entry(app)
+edad_entry.grid(row=2, column=1)
+
+direccion_label = tk.Label(app, text="Dirección:")
+direccion_label.grid(row=3, column=0)
+direccion_entry = tk.Entry(app)
+direccion_entry.grid(row=3, column=1)
+
+baja_vision_check = tk.Checkbutton(app, text="Baja visión", variable=usuario_baja_vision, command=adaptar_interfaz)
+baja_vision_check.grid(row=4, column=0)
+
+enviar_button = tk.Button(app, text="Enviar", command=enviar)
+enviar_button.grid(row=5, column=0)
+
+cancelar_button = tk.Button(app, text="Cancelar", command=cancelar)
+cancelar_button.grid(row=5, column=1)
+
+app.mainloop()
+Este código crea una ventana de aplicación con un tamaño de 320x240 píxeles, cuatro campos de entrada y dos botones. La función adaptar_interfaz se encarga de cambiar la apariencia de la interfaz cuando se marca la casilla de verificación "Baja visión". Puedes modificar este código para incluir más características de adaptabilidad y cambiar la apariencia según la ubicación del usuario.
